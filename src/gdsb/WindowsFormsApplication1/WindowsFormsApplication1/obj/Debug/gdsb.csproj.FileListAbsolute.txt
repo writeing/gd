@@ -31,3 +31,4 @@ E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\g
 E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\gdsb.csprojResolveAssemblyReference.cache
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.delForm.resources

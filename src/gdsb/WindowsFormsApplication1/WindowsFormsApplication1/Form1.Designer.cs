@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("节点1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("节点2");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("节点3");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("节点4");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("节点5");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("节点6");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("你麻痹", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("校长室");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("教务处");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("行政处");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("后勤处");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新建ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +41,11 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +56,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(830, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(690, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,7 +110,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.aboutToolStripMenuItem.Text = "about";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -122,35 +118,92 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(31, 41);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "节点1";
-            treeNode1.Text = "节点1";
-            treeNode2.Name = "节点2";
-            treeNode2.Text = "节点2";
-            treeNode3.Name = "节点3";
-            treeNode3.Text = "节点3";
-            treeNode4.Name = "节点4";
-            treeNode4.Text = "节点4";
-            treeNode5.Name = "节点5";
-            treeNode5.Text = "节点5";
-            treeNode6.Name = "节点6";
-            treeNode6.Text = "节点6";
-            treeNode7.Name = "节点0";
-            treeNode7.Text = "你麻痹";
+            treeNode5.BackColor = System.Drawing.Color.GhostWhite;
+            treeNode5.Name = "xzs";
+            treeNode5.Text = "校长室";
+            treeNode5.ToolTipText = "校长那一帮人的数据";
+            treeNode6.BackColor = System.Drawing.Color.GhostWhite;
+            treeNode6.Name = "jwc";
+            treeNode6.Text = "教务处";
+            treeNode6.ToolTipText = "老师们的集合";
+            treeNode7.BackColor = System.Drawing.Color.GhostWhite;
+            treeNode7.Name = "xzc";
+            treeNode7.Text = "行政处";
+            treeNode7.ToolTipText = "专门做行政工作的那群狗东西";
+            treeNode8.BackColor = System.Drawing.Color.GhostWhite;
+            treeNode8.Name = "hqc";
+            treeNode8.Text = "后勤处";
+            treeNode8.ToolTipText = "做出猪吃的食物的那帮人";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-            this.treeView1.Size = new System.Drawing.Size(449, 408);
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8});
+            this.treeView1.Size = new System.Drawing.Size(137, 408);
             this.treeView1.TabIndex = 1;
+            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.InfoText;
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.richTextBox1.Location = new System.Drawing.Point(174, 41);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(276, 408);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(456, 426);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "重置密码";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(456, 83);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "惩 罚";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(456, 126);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "清空记录";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(456, 41);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "奖 赏";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 541);
+            this.ClientSize = new System.Drawing.Size(690, 483);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(846, 579);
-            this.MinimumSize = new System.Drawing.Size(846, 579);
             this.Name = "form1";
             this.Text = "KPIk考核系统";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -172,6 +225,11 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button2;
 
     }
 }

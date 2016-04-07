@@ -66,6 +66,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -371,6 +373,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.tbjxmeney);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.comboBox2);
@@ -443,6 +447,28 @@
             this.label14.TabIndex = 37;
             this.label14.Text = "其他设置";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(334, 89);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 12);
+            this.label19.TabIndex = 32;
+            this.label19.Text = "所属部门";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "校长室",
+            "后勤处",
+            "教务处",
+            "行政处"});
+            this.comboBox3.Location = new System.Drawing.Point(417, 86);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(114, 20);
+            this.comboBox3.TabIndex = 33;
+            // 
             // rootFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -506,5 +532,7 @@
         private System.Windows.Forms.TextBox tbAdress;
         private System.Windows.Forms.TextBox tbjxmeney;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label19;
     }
 }

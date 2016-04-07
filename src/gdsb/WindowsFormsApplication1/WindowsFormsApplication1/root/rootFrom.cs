@@ -69,6 +69,7 @@ namespace WindowsFormsApplication1.root
             cbbXl.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
             tbjxmeney.Clear();
+            comboBox3.Text = "";
         }
         private void seachUser(string ID,bool showCox=false)
         {
@@ -129,6 +130,7 @@ namespace WindowsFormsApplication1.root
                         tbjxmeney.Text = userfind.Jxmoney;
                         tbClassed.Text = userfind.Bzrclass;
                         comboBox2.Text = userfind.Sub;
+                        comboBox3.Text = userfind.Bgs;
                         string comclass = userfind.Classed[0];
                         for (int i = 1; userfind.Classed.Length>1&&i < userfind.Classed.Length; i++)
                         {
@@ -166,7 +168,7 @@ namespace WindowsFormsApplication1.root
             string tel = tbTel.Text;
             string xjmoney = tbjxmeney.Text;
             string address = tbAdress.Text;
-
+            string bgs = comboBox3.Text;
             if (comboBox1.Text == "班主任")
             {
                 bzrClassed = textBox4.Text;
@@ -197,7 +199,7 @@ namespace WindowsFormsApplication1.root
             user.NumID = numid;
             user.Sub = sub;
             user.Birth = brith;
-
+            user.Bgs = bgs;
             var query = new QueryDocument { { "ID", ID } };
             var result = conn.FindAs<User>(query);
             if(result.Count()!=0)
