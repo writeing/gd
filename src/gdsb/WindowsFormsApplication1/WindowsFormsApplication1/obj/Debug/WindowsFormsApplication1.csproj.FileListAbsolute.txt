@@ -1,0 +1,15 @@
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MongoDB.Bson.dll
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.dll
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MongoDB.Bson.pdb
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MongoDB.Bson.xml
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.pdb
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\MongoDB.Driver.xml
