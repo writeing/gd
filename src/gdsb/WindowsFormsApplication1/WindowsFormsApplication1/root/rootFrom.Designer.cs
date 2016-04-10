@@ -61,20 +61,22 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.tbjxmeney = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(543, 440);
+            this.button1.Location = new System.Drawing.Point(526, 314);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -253,10 +255,10 @@
             // 
             // rtbShowmdb
             // 
-            this.rtbShowmdb.Location = new System.Drawing.Point(28, 312);
+            this.rtbShowmdb.Location = new System.Drawing.Point(28, 316);
             this.rtbShowmdb.Name = "rtbShowmdb";
             this.rtbShowmdb.ReadOnly = true;
-            this.rtbShowmdb.Size = new System.Drawing.Size(411, 151);
+            this.rtbShowmdb.Size = new System.Drawing.Size(411, 177);
             this.rtbShowmdb.TabIndex = 30;
             this.rtbShowmdb.Text = "";
             // 
@@ -278,6 +280,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox4);
+            this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.tbAdress);
             this.panel1.Controls.Add(this.maskedTextBox3);
             this.panel1.Controls.Add(this.label17);
@@ -298,7 +302,7 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Location = new System.Drawing.Point(28, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(590, 95);
+            this.panel1.Size = new System.Drawing.Size(590, 119);
             this.panel1.TabIndex = 34;
             this.panel1.Tag = "基本信息";
             // 
@@ -389,10 +393,32 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.tbGrade);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(28, 175);
+            this.panel2.Location = new System.Drawing.Point(28, 187);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(590, 121);
             this.panel2.TabIndex = 36;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "校长室",
+            "后勤处",
+            "教务处",
+            "行政处"});
+            this.comboBox3.Location = new System.Drawing.Point(417, 86);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(114, 20);
+            this.comboBox3.TabIndex = 33;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(334, 89);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 12);
+            this.label19.TabIndex = 32;
+            this.label19.Text = "所属部门";
             // 
             // tbjxmeney
             // 
@@ -441,39 +467,39 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(26, 149);
+            this.label14.Location = new System.Drawing.Point(26, 162);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 37;
             this.label14.Text = "其他设置";
             // 
-            // label19
+            // label20
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(334, 89);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(53, 12);
-            this.label19.TabIndex = 32;
-            this.label19.Text = "所属部门";
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(3, 89);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 12);
+            this.label20.TabIndex = 40;
+            this.label20.Text = "性 别";
             // 
-            // comboBox3
+            // comboBox4
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "校长室",
-            "后勤处",
-            "教务处",
-            "行政处"});
-            this.comboBox3.Location = new System.Drawing.Point(417, 86);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(114, 20);
-            this.comboBox3.TabIndex = 33;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "男",
+            "女",
+            "变态"});
+            this.comboBox4.Location = new System.Drawing.Point(53, 86);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(72, 20);
+            this.comboBox4.TabIndex = 41;
+            this.comboBox4.Text = "男";
             // 
             // rootFrom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 475);
+            this.ClientSize = new System.Drawing.Size(657, 509);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label12);
@@ -534,5 +560,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label20;
     }
 }

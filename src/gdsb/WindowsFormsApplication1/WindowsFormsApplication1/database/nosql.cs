@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1.database
         public string service = "mongodb://127.0.0.1:27017";
         public string databasename = "gd";
         public string datatablename = "people";
+        public string dataname = "data";
 
         public MongoCollection getConn()
         {
@@ -21,6 +22,16 @@ namespace WindowsFormsApplication1.database
             MongoDatabase db = server.GetDatabase(databasename);
 
             MongoCollection conn = db.GetCollection(datatablename);
+            return conn;
+        }
+
+        public MongoCollection getdataConn()
+        {
+            MongoServer server = MongoDB.Driver.MongoServer.Create(service);
+            //获得数据库cnblogs
+            MongoDatabase db = server.GetDatabase(databasename);
+
+            MongoCollection conn = db.GetCollection(dataname);
             return conn;
         }
     }

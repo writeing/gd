@@ -19,12 +19,14 @@ namespace WindowsFormsApplication1.root
     public partial class rootFrom : Form
     {
         string returnValue = null;
+        int flag = 1;
+        public User addUser;
         public rootFrom()
         {
             InitializeComponent();
 
         }
-        public rootFrom(bool change = false):this()
+        public rootFrom(bool change):this()
         {
             if(change == true)
             {                
@@ -35,14 +37,17 @@ namespace WindowsFormsApplication1.root
         }
         public void showDB()
         {            
-            this.returnValue = Interaction.InputBox("提示", "请输入用户的ID", "please input user ID", 100, 100);                                    
-            while(returnValue.Equals(""))
+            this.returnValue = Interaction.InputBox("提示", "请输入用户的ID", "please input user ID", 100, 100);
+            if (returnValue == "")
             {
-                MessageBox.Show("请输入用户ID");
-                this.returnValue = Interaction.InputBox("提示", "请输入用户的ID", "please input user ID", 100, 100);
+                flag = 0;                
+                //MessageBox.Show("你真的是空？"+returnValue);
+                //this.returnValue = Interaction.InputBox("提示", "请输入用户的ID", "please input user ID", 100, 100);
             }
-
-            this.seachUser(this.returnValue, true);
+            else
+            {
+                this.seachUser(this.returnValue, true);
+            }
 
 
                         
@@ -108,10 +113,12 @@ namespace WindowsFormsApplication1.root
             {
                 if(result.Count() == 0)
                 {
-                    MessageBox.Show("not found the ID");                    
+                    MessageBox.Show("not found the ID");
+                    flag = 0;
                 }
                 else
                 {
+                    
                     for (int oc = 0; oc < result.Count(); oc++)
                     {
                         User userfind = result.ElementAt<User>(0);
@@ -169,6 +176,7 @@ namespace WindowsFormsApplication1.root
             string xjmoney = tbjxmeney.Text;
             string address = tbAdress.Text;
             string bgs = comboBox3.Text;
+            string sex = comboBox4.Text;
             if (comboBox1.Text == "班主任")
             {
                 bzrClassed = textBox4.Text;
@@ -200,6 +208,9 @@ namespace WindowsFormsApplication1.root
             user.Sub = sub;
             user.Birth = brith;
             user.Bgs = bgs;
+            user.Sex = sex;
+            user.Reward = new string[] { };
+            user.Punish = new string[] { };
             var query = new QueryDocument { { "ID", ID } };
             var result = conn.FindAs<User>(query);
             if(result.Count()!=0)
@@ -211,16 +222,24 @@ namespace WindowsFormsApplication1.root
                 conn.Insert<User>(user);
                 seachUser(ID);
                 cleanKJ();
-                MessageBox.Show("插入成功");
+                if (MessageBox.Show("插入成功,是否退出?","提示", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+                {
+                    return;
+                }
             }
-            
-            
+            addUser = user;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void rootFrom_Load(object sender, EventArgs e)
         {
             label1.Hide();
             textBox4.Hide();
+            if (flag == 0)
+            {
+                this.Close();
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

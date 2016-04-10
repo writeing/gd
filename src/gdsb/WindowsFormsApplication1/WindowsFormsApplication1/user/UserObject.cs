@@ -12,7 +12,13 @@ namespace WindowsFormsApplication1.user
     public class User
     {
         public ObjectId _id;
-        string birth, age, sub, timeComeStu, timeRuzhi, numID, xl, Grade, money, zhiwei, password, bzrclass, tel, address, jxmoney, bgs;
+        string birth, age, sub, timeComeStu, timeRuzhi, numID, xl, Grade, money, zhiwei, password, bzrclass, tel, address, jxmoney, bgs, sex;
+
+        public string Sex
+        {
+            get { return sex; }
+            set { sex = value; }
+        }
 
         public string Bgs
         {

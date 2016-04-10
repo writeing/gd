@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using WindowsFormsApplication1.database;
 using WindowsFormsApplication1.user;
 using WindowsFormsApplication1.root;
 using WindowsFormsApplication1;
 using Microsoft.VisualBasic;
+using WindowsFormsApplication1.database;
 namespace WindowsFormsApplication1
 {
     public partial class form1 : Form
@@ -22,6 +22,10 @@ namespace WindowsFormsApplication1
         public static mongoDB db = new mongoDB();
         public HashSet<User> userinfo = new HashSet<User>();                   
         public static MongoCollection conn = db.getConn();
+        private awardForm af;
+        private puishFrom pf;
+        public string about = "本考核系统是猪油仔设计，超哥制作的主要的目的是完成毕业设计并且完成请吃饭的任务";
+
         public form1()
         {
             InitializeComponent();
@@ -29,7 +33,7 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.loadPeople();
+            this.loadPeople();            
         }
         public void loadPeople()
         {
@@ -44,7 +48,10 @@ namespace WindowsFormsApplication1
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             root.rootFrom newpeople = new root.rootFrom();
-            newpeople.Show();
+            if (newpeople.ShowDialog() == DialogResult.OK)
+            {
+                this.showRich(newpeople.addUser);
+            }
         }
 
         private void 删除人员ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,12 +63,7 @@ namespace WindowsFormsApplication1
                     (sender1, e1) =>
                     {                        
                         string ID = m_dlg.TextBox1value;
-                        string name = m_dlg.TextBox2value;
-                        MessageBox.Show("ID" + ID + "\n" + "name" + name);
-                        if (ID == "" && name == "")
-                        {
-                            MessageBox.Show("请填写ID或者name");
-                        }
+                        string name = m_dlg.TextBox2value;                        
                         if(name=="")
                         {
                             var query = new QueryDocument { { "ID", ID } };                            
@@ -125,12 +127,13 @@ namespace WindowsFormsApplication1
         }
 
 
-        public string about = "本考核系统是猪油仔设计，超哥制作的主要的目的是完成毕业设计并且完成请吃饭的任务";
+       
         private void showRich(User user)
         {
             richTextBox1.Clear();
-            richTextBox1.AppendText("ID：" + user.ID + "\n");
+            richTextBox1.AppendText("ID：" + user.ID + "\n");            
             richTextBox1.AppendText("姓名：" + user.name + "\n");
+            richTextBox1.AppendText("性别：" + user.Sex + "\n");
             richTextBox1.AppendText("身份证：" + user.NumID + "\n");
             richTextBox1.AppendText("入职时间:" + user.TimeComeStu + "\n");
             richTextBox1.AppendText("工作时间：" + user.TimeRuzhi + "\n");
@@ -150,15 +153,15 @@ namespace WindowsFormsApplication1
             richTextBox1.AppendText("工资：" + user.Money + "\n");
             richTextBox1.AppendText("所教科目" + user.Sub + "\n");
             richTextBox1.AppendText("电话号码：" + user.Tel + "\n");
-            if (user.Punish!= null)
+            if (user.Reward!= null)
             {
-                foreach (string jl in user.Punish)
+                foreach (string jl in user.Reward)
                     richTextBox1.AppendText("奖励：" + jl + "\n");
             }
-            if (user.Reward != null)
+            if (user.Punish != null)
             {
-                foreach (string cf in user.Reward)
-                    richTextBox1.AppendText("惩罚" + cf + "\n");
+                foreach (string cf in user.Punish)
+                    richTextBox1.AppendText("惩罚:" + cf + "\n");
             }
         }
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -200,10 +203,7 @@ namespace WindowsFormsApplication1
                             }
                         }
                         userinfo.Add(userfind);
-                        addchildTv(index, userfind);
-
-                        
-                        
+                        addchildTv(index, userfind);                                                
                     }
 
                 }
@@ -233,9 +233,186 @@ namespace WindowsFormsApplication1
             string userID = userNode.Name;
             IMongoUpdate iu = MongoDB.Driver.Builders.Update.Set("Password", "123456");
             var query = new QueryDocument { { "ID", userID } };
-            conn.Update(query, iu);                       
-                       
+            conn.Update(query, iu);
+            MessageBox.Show("重置成功password：123456");           
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode == null || treeView1.SelectedNode.Parent == null)
+            {
+                MessageBox.Show("请先选择人员");
+            }
+            else
+            {
+                TreeNode userNode = treeView1.SelectedNode;
+                string userID = userNode.Name;
+                var query = new QueryDocument { { "ID", userID } };
+                var result = conn.FindAs<User>(query);
+                User user = result.ElementAt<User>(0);
+                user.Reward = new string[] { };
+                conn.Remove(query);
+                conn.Insert<User>(user);
+                MessageBox.Show("删除奖励成功");
+                showRich(user);
+            }
+            
+        }
+        public void writeRewardInDB(string str)
+        {
+            TreeNode userNode = treeView1.SelectedNode;
+            string userID = userNode.Name;
+            var query = new QueryDocument { { "ID", userID } };
+            var result = conn.FindAs<User>(query);
+            User user = result.ElementAt<User>(0);
+            string reward="";
+            for (int i = 0; i < user.Reward.Length; i++)
+            {
+                reward += user.Reward[i]+'-';
+            }
+            reward += str;
+            string[] aw = reward.Split('-');
+            user.Reward = aw;
+
+            conn.Remove(query);
+            conn.Insert<User>(user);
+            showRich(user);
+            MessageBox.Show("添加奖励成功"+str);    
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode == null || treeView1.SelectedNode.Parent == null)
+            {
+                MessageBox.Show("请先选择人员");
+            }
+            else
+            {
+                af = new awardForm();                
+                if (af.ShowDialog() == DialogResult.OK)
+                {
+                    writeRewardInDB(af.strIndex);
+                }
+            }
+        }
+        public void writePunishInDB(string str)
+        {
+            TreeNode userNode = treeView1.SelectedNode;
+            string userID = userNode.Name;
+            var query = new QueryDocument { { "ID", userID } };
+            var result = conn.FindAs<User>(query);
+            User user = result.ElementAt<User>(0);
+            string reward = "";
+            for (int i = 0; i < user.Punish.Length; i++)
+            {
+                reward += user.Punish[i] + '-';
+            }
+            reward += str;
+            string[] aw = reward.Split('-');
+            user.Punish = aw;
+
+            conn.Remove(query);
+            conn.Insert<User>(user);
+            showRich(user);
+            MessageBox.Show("添加惩罚成功" + str);            
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode == null || treeView1.SelectedNode.Parent == null)
+            {
+                MessageBox.Show("请先选择人员");
+            }
+            else
+            {
+                pf = new puishFrom();
+                if (pf.ShowDialog() == DialogResult.OK)
+                {
+                    writePunishInDB(pf.strIndex);
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TreeNode userNode = treeView1.SelectedNode;
+            if (treeView1.SelectedNode == null || treeView1.SelectedNode.Parent == null)
+            {
+                MessageBox.Show("请先选择人员");
+            }
+            else
+            {
+                
+                string userID = userNode.Name;
+                var query = new QueryDocument { { "ID", userID } };
+                var result = conn.FindAs<User>(query);
+                User user = result.ElementAt<User>(0);
+                user.Punish = new string[] { };
+                conn.Remove(query);
+                conn.Insert<User>(user);
+                MessageBox.Show("删除惩罚成功");
+                showRich(user);
+            }
+            
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void findandshow(string fID, string fName)
+        {
+            if (fID == "")
+            {
+                var query = new QueryDocument { { "name", fName } };        
+                var result = conn.FindAs<User>(query);                                
+                if (result.Count() != 0)
+                {
+                    User user = result.ElementAt<User>(0);
+                    showRich(user);
+                }
+                else
+                {
+                    MessageBox.Show("没有找到name为:" + fName + "的人");
+                }
+            }
+            else           
+                if (fName == "")
+                {
+                    var query = new QueryDocument { { "ID", fID } };
+                    var result = conn.FindAs<User>(query);
+                    if (result.Count() != 0)
+                    {
+                        User user = result.ElementAt<User>(0);
+                        showRich(user);
+                    }
+                    else
+                    {
+                        MessageBox.Show("没有找到ID为:" + fID + "的人");
+                    }
+                }
+        }
+        private void 查找人员ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            findPeople fp = new findPeople();
+            if (fp.ShowDialog() == DialogResult.OK)
+            {
+                string findID = fp.FindId1;
+                string findName = fp.FindName1;
+                findandshow(findID, findName);
+            }
+
+        }
+
+        private void 添加奖赏条件ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rearddataForm rrdd = new rearddataForm();
+            rrdd.ShowDialog();
+        }
+
+        private void 添加惩罚调理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Punidataform pf = new Punidataform();
+            pf.ShowDialog();
         }
     }
 }

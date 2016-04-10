@@ -12,7 +12,6 @@ C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplic
 C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\gdsb.csproj.GenerateResource.Cache
 C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\gdsb.csprojResolveAssemblyReference.cache
 C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.root.rootFrom.resources
 E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
@@ -32,3 +31,11 @@ E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\W
 E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 E:\wxc\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\gdsb.csprojResolveAssemblyReference.cache
 C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.delForm.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.recordBaseForm.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.findPeople.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.databaseForm.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\gdsb.csprojResolveAssemblyReference.cache
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.rearddataForm.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Punidataform.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LoginForm.resources
+C:\Users\write_1\Desktop\gd\src\gdsb\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.userForm.resources

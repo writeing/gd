@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="awardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="databaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="databaseForm.Designer.cs">
+      <DependentUpon>databaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="database\nosql.cs" />
     <Compile Include="delForm.cs">
       <SubType>Form</SubType>
@@ -58,26 +67,66 @@
     <Compile Include="delForm.Designer.cs">
       <DependentUpon>delForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="findPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="puishFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Punidataform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rearddataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recordBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recordBaseForm.Designer.cs">
+      <DependentUpon>recordBaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="root\rootFrom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="root\rootFrom.Designer.cs">
       <DependentUpon>rootFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="userForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userForm.Designer.cs">
+      <DependentUpon>userForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user\dataUser.cs" />
     <Compile Include="user\UserObject.cs" />
+    <EmbeddedResource Include="databaseForm.resx">
+      <DependentUpon>databaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="delForm.resx">
       <DependentUpon>delForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="findPeople.resx">
+      <DependentUpon>findPeople.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,8 +137,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Punidataform.resx">
+      <DependentUpon>Punidataform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rearddataForm.resx">
+      <DependentUpon>rearddataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recordBaseForm.resx">
+      <DependentUpon>recordBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="root\rootFrom.resx">
       <DependentUpon>rootFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userForm.resx">
+      <DependentUpon>userForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
